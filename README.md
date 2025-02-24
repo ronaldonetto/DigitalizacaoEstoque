@@ -1,4 +1,4 @@
-# Digitalizacao Estoque
+# Digitalização Estoque
 Título: Digitalização do Estoque
 
 Descrição: 
