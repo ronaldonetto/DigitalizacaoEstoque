@@ -71,7 +71,13 @@ public class Produto {
     public void setMedida(String medida) {
        this.medida = medida;
     }
+     public String getUnidadeMedida() {
+        return unidadeMedida;
+    }
 
+    public void setUnidadeMedida(String unidadeMedida) {
+        this.unidadeMedida = unidadeMedida;
+    }
     
     public String getCategoria() {
         return this.categoria;
