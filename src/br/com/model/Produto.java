@@ -1,6 +1,7 @@
 package br.com.model;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  *
@@ -8,7 +9,7 @@ import java.time.LocalDateTime;
  */
 public class Produto {
 
-    private int os;
+    private String os;
     private String produto;
     private String descricao;
     private String fornecedor;
@@ -35,7 +36,7 @@ public class Produto {
      *@param fornecedor Fornecedor do produto.
      *
      */
-    public Produto(int os, String produto, String unidadeMedida, String medida, String categoria, String descricao, LocalDateTime data, String forncedor) {
+    public Produto(String os, String produto, String unidadeMedida, String medida, String categoria, String descricao, LocalDateTime data, String forncedor) {
 
         this.os = os;
         this.produto = produto;
@@ -48,11 +49,11 @@ public class Produto {
     }
     
     //Getters e Setters
-    public int getOs() {
+    public String getOs() {
         return os;
     }
 
-    public void setOs(int os) {
+    public void setOs(String os) {
         this.os = os;
     }
 
@@ -120,8 +121,12 @@ public class Produto {
      */
     @Override
     public String toString() {
-        return String.format("OS: %d | Produto: %s | Categoria: %s | UnidadeMedida: %s | Medida: %.2f m²", 
-            os, produto, categoria, unidadeMedida, medida);
+        
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+        
+        
+        return String.format("OS: %s | PRODUTO: %s | CATEGORIA: %s | UNIDADE_MEDIDA: %s | MEDIDA: %s | DATA: %s  ", 
+            os, produto, categoria, unidadeMedida, medida, data.format(formatter));
     }
 
 }  
